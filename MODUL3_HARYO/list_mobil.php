@@ -15,8 +15,25 @@
             include("connect.php");
 
             // Buatlah query untuk mengambil data dari database (gunakan query SELECT)
-            $query = "SELECT * FROM showroom_mobil";
+            $query = "SELECT * FROM showroom_mobil ";
             $result = mysqli_query($connect, $query);
+            if ($result) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $nama_mobil = $row['nama_mobil'];
+                    $brand_mobil  = $row['brand_mobil'];
+                    $warna_mobil  = $row['warna_mobil'];
+                    $tipe_mobil  = $row['tipe_mobil'];
+                    $harga_mobil  = $row['harga_mobil'];
+                    echo '<tr>
+                    <th scope="row">' . $brand_mobil . '</th>
+                    <td>' . $nama_mobil . '</td>               
+                    <td>' . $brand_mobil . '</td>
+                    <td>' . $warna_mobil . '</td>
+                    <td>' . $tipe_mobil . '</td>
+                    <td>' . $harga_mobil . '</td>
+                    </tr>';
+                }
+            }
 
             
 
