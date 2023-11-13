@@ -40,5 +40,5 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 
 // (7) Tutup koneksi ke database setelah selesai menggunakan database
 
-$connect->close();
+mysqli_close($connect);
 ?>
